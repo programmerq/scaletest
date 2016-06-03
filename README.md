@@ -24,3 +24,13 @@ You can see what value is returned by docker's internal DNS service by running t
 or
 
     docker-compose run nginx drill web.
+
+## So what is going on?
+
+Compose is doing something manually here for us, it's basically using the 'docker run --net-alias' option. For example, when it makes the `scaletest_web_2` container, it is essentially doing
+
+    docker run --net=scaletest_default --name scaletest_web_2 --net-alias web ...
+
+Since both that container and nginx are on the same --net, nginx gets the IP of scaletest_web_2 when it queries the 'web' name, along with any other containers that share the `web` alias.
+
+Nginx has round robin DNS support in its proxy module, and treats the upstream just like any other round robin DNS.
