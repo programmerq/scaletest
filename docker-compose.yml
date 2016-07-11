@@ -2,7 +2,9 @@ version: "2"
 services:
     nginx:
         build: nginx
+        image: programmerq/scaletest:nginx
         ports:
             - "80:80"
     web:
         build: web
+        image: programmerq/scaletest:web
