@@ -27,7 +27,7 @@ or
 
 ## So what is going on?
 
-Compose is doing something manually here for us, it's basically using the 'docker run --net-alias' option. For example, when it makes the `scaletest_web_2` container, it is essentially doing
+Compose is doing something manually here for us, it's basically using the `docker run --net-alias` option. For example, when it makes the `scaletest_web_2` container, it is essentially doing
 
     docker run --net=scaletest_default --name scaletest_web_2 --net-alias web ...
 
