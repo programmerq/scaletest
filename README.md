@@ -1,5 +1,7 @@
 # Example of network service discovery
 
+There are two ways to deploy containers in the docker ecosystem. This boils down to the 'docker run' interface, and the 'docker service' interface. The docker-compose binary/tool uses the 'docker run' interface under the hood, and the 'docker stack deploy' command uses the 'docker service' interface under the hood. Both 'docker-compose' and 'docker stack deploy' can take in a docker-compose.yml file.
+
 ## Using swarm mode services via `docker stack deploy`
 
 Clone this repo and run the following:
